@@ -46,7 +46,7 @@ flatinstall()
 
 
 
-print "Creting symlink 'zy' to 'zypper'"
+print "Creating symlink 'zy' to 'zypper'"
 sudo ln -s /usr/bin/zypper /usr/bin/zy
 
 
