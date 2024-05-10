@@ -58,14 +58,14 @@ print "Disabling recommended packages and openSUSE branding in 'zypp' conf"
 sudo sed --quiet 's/# solver.onlyRequires = false/solver.onlyRequires = true/' /etc/zypp/zypp.conf
 
 
-print "Installing software 'vanilla theming'"
+print "Installing Vanilla Theming for installed software."
 sudo zy in \
 	branding-upstream libreoffice-branding-upstream NetworkManager-branding-upstream \
 	gdm-branding-upstream gio-branding-upstream gnome-menus-branding-upstream \
 	gtk2-branding-upstream gtk3-branding-upstream gtk4-branding-upstream
 
 
-print "Downloading some of Nerd Fonts"
+print "Downloading usable Nerd Fonts"
 git_sparse_clone https://github.com/ryanoasis/nerd-fonts \
 	"patched-fonts/NerdFontsSymbolsOnly" \
 	"patched-fonts/JetBrainsMono" \
@@ -78,13 +78,13 @@ git_sparse_clone https://github.com/ryanoasis/nerd-fonts \
 	"patched-fonts/Monoid"
 
 
-print "Installing fonts.."
+print "Installing fonts"
 find nerd-fonts -type f -name "*.ttf" -exec mv {} . \;
 rm -rf nerd-fonts
 sudo mv -v *.ttf /usr/share/fonts
 
 
-print "Removing fish configs if there are any"
+print "Removing fish configs"
 rm -rv /home/$usr/.config/fish
 
 
@@ -268,7 +268,7 @@ print "Installing LunarVIM"
 LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 
-print "Removing useless apps: Firefox, Transmission"
+print "Removing useless apps: Firefox, Transmission, Evolution"
 sudo zy rm -u MozillaFirefox transmission-gtk evolution
 
 
@@ -276,7 +276,7 @@ print "Changing $usr's shell to fish"
 sudo chsh $usr -s /usr/bin/fish
 
 
-print "Installing fisher for 'fish' shell plugins"
+print "Installing fisher plugin installer for 'fish' shell"
 fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 
 
@@ -284,8 +284,8 @@ print "Installing TIDE prompt for 'fish' shell"
 fish -c "fisher install IlanCosman/tide"
 
 
-echo -e "\n\n\n\n[      Configure TIDE...     ]"
-echo -e ": waiting 7s to attract user :"
+echo -e "\n\n\n\n[      Let's Configure TIDE...     ]"
+echo -e ":    waiting 7s to attract user    :"
 sleep 7
 nohup terminology -e "tide configure" >> /dev/null 2>&1 &
 
@@ -294,11 +294,11 @@ print "Installing fzf hotkeys for 'fish' shell"
 fish -c "fisher install PatrickF1/fzf.fish"
 
 
-print "Installing done notifications for 'fish' shell"
+print "Installing 'done notifications' for 'fish' shell"
 fish -c "fisher install franciscolourenco/done"
 
 
-print "Installing auto-complete matching pairs for 'fish' shell"
+print "Installing 'auto-complete matching pairs' for 'fish' shell"
 fish -c "fisher install jorgebucaran/autopair.fish"
 
 
