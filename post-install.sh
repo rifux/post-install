@@ -123,7 +123,9 @@ sudo zy in --no-confirm	\
 	\
 	bleachbit \
 	\
-	gnome-boxes virtualbox
+	gnome-boxes virtualbox \
+ 	\
+  	torbrowser-launcher
 
 
 print "Enabling Docker service"
