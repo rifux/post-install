@@ -17,6 +17,7 @@ cd P_O_S_T--I_N_S_T_A_L_L
 echo -e "$(pwd)"
 
 
+
 print()
 {
 	echo -e "\n\n\n[ $1.. ]"
@@ -314,7 +315,7 @@ sudo zy dup --allow-arch-change
 
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))
-echo -e "\n\n$(tput bold)Elapsed time: $elapsed_time seconds instead of few hours. ;)"
+echo -e "\n\n$(tput bold)Elapsed time: $((elapsed_time/60)) min, $((elapsed_time%60)) sec instead of few hours. ;)"
 
 
 echo -e "\n\n\n\n\n$(tput setaf 5)$(tput bold)Installed CLI programs that should increase your productivity:"
