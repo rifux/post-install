@@ -69,6 +69,7 @@ sudo zy in \
 print "Downloading usable Nerd Fonts"
 git_sparse_clone https://github.com/ryanoasis/nerd-fonts \
 	"patched-fonts/NerdFontsSymbolsOnly" \
+ 	"patched-fonts/Overpass" \
 	"patched-fonts/JetBrainsMono" \
 	"patched-fonts/Mononoki" \
 	"patched-fonts/FiraCode" \
@@ -161,28 +162,53 @@ print "Installing LocalSend"
 flatinstall flathub org.localsend.localsend_app
 
 
-print "Installing Varia, Nheko & FluffyChat"
+print "Installing Media apps"
+flatinstall io.freetubeapp.FreeTube
+flatinstall io.gitlab.zehkira.Monophony
+flatinstall com.github.neithern.g4music
+flatinstall io.bassi.Amberol
+flatinstall com.github.unrud.VideoDownloader
+flatinstall net.fasterland.converseen
+flatinstall info.febvre.Komikku
 flatinstall io.github.giantpinkrobots.varia
+flatinstall io.github.jliljebl.Flowblade
+flatinstall com.github.wwmm.easyeffects
+
+
+print "Installing Upscayl"
+flatinstall org.upscayl.Upscayl
+
+
+print "Installing Chatting software"
 flatinstall io.github.NhekoReborn.Nheko
 flatinstall im.fluffychat.Fluffychat
 
 
-print "Installing FreeTube, Video Downloader & media apps"
-flatinstall io.freetubeapp.FreeTube
-flatinstall com.github.unrud.VideoDownloader
-flatinstall net.fasterland.converseen
-flatinstall io.gitlab.zehkira.Monophony
-flatinstall com.github.neithern.g4music
-flatinstall info.febvre.Komikku
-
-
-print "Installing productivity software"
+print "Installing Productivity software: coding"
 flatinstall com.jetpackduba.Gitnuro
 flatinstall com.mardojai.ForgeSparks
-flatinstall io.github.diegoivanme.flowtime
+flatinstall io.github.nokse22.asciidraw
+flatinstall fyi.zoey.Boop-GTK
+flatinstall io.github.fizzyizzy05.binary
+flatinstall net.werwolv.ImHex
+
+
+print "Installing Productivity software: general"
+flatinstall com.toolstack.Folio
 flatinstall io.github.mrvladus.List
+flatinstall io.github.diegoivanme.flowtime
 flatinstall io.crow_translate.CrowTranslate
+flatinstall io.github.nokse22.minitext
+flatinstall io.github.wazzaps.Fingerpaint
+
+
+print "Installing customization software"
+flatinstall page.codeberg.libre_menu_editor.LibreMenuEditor
 flatinstall com.github.tchx84.Flatseal
+
+
+print "Installing gaming software"
+flatinstall page.kramo.Cartridges
 
 
 print "Installing Media Codecs and VSCodium"
