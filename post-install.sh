@@ -40,11 +40,6 @@ git_sparse_clone() {
 	cd $pwd_dir
 }
 
-flatinstall()
-{
-	sudo flatpak install --system --assumeyes $1
-}
-
 
 
 print "Creating symlink 'zy' to 'zypper'"
@@ -158,6 +153,20 @@ source \$CONFIG_FISH_HOME/zoxide.fish
 EOL
 
 
+cat >./install_flatpak_apps.sh <<EOL
+#!/usr/bin/sh
+rm ./install_flatpak_apps.sh
+print()
+{
+	echo -e "\\n\\n\\n[ \$1.. ]"
+	sleep $sleep_time
+}
+
+flatinstall()
+{
+	sudo flatpak install --system --assumeyes \$1
+}
+
 print "Installing LocalSend"
 flatinstall flathub org.localsend.localsend_app
 
@@ -210,6 +219,17 @@ flatinstall com.github.tchx84.Flatseal
 print "Installing gaming software"
 flatinstall page.kramo.Cartridges
 
+echo -e "[ THE SCRIPT IS DONE. EXITING IN 5sec. ]"
+sleep 5
+EOL
+
+
+chmod +x install_flatpak_apps.sh
+
+
+nohup terminology -e "./install_flatpak_apps.sh" >> /dev/null 2>&1 &
+
+
 
 print "Installing Media Codecs and VSCodium"
 opi codecs 
@@ -221,6 +241,8 @@ cat >./install_vscodium_extensions.sh <<EOL
 rm ./install_vscodium_extensions.sh
 echo -e "[ Installing VSCodium extensions: General coding, Golang, C++.. ]"
 sleep 3
+
+
 codium --install-extension golang.Go
 codium --install-extension r3inbowari.gomodexplorer
 codium --install-extension furkanozalp.go-syntax
@@ -246,16 +268,22 @@ codium --install-extension donjayamanne.githistory
 codium --install-extension GitHub.vscode-pull-request-github
 codium --install-extension eamodio.gitlens
 codium --install-extension PKief.material-icon-theme
+
 rm -rv Microsoft.VisualStudio.Services.VSIXPackage*
 wget --quiet --progress=bar --show-progress "https://quicktype.gallery.vsassets.io/_apis/public/gallery/publisher/quicktype/extension/quicktype/latest/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
 mv -v Microsoft.VisualStudio.Services.VSIXPackage quicktype-latest.vsix
+
 codium --install-extension ./quicktype-latest.vsix
+
 rm -v quicktype-latest.vsix
 rm -rv Microsoft.VisualStudio.Services.VSIXPackage*
+
 codium --install-extension christian-kohler.path-intellisense
 codium --install-extension bradlc.vscode-tailwindcss
 codium --install-extension 13xforever.language-x86-64-assembly
 codium --install-extension pr1sm8.theme-panda
+
+
 echo -e "[ THE SCRIPT IS DONE. EXITING IN 5sec. ]"
 sleep 5
 EOL
