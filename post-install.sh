@@ -18,7 +18,7 @@ echo -e "$(pwd)"
 
 
 if [[ $usr != "root" ]]; then
-	echo "Script should be executed as `root`!"
+	echo "Script should be executed as 'root'!"
  	exit 1
 fi
 
