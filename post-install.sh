@@ -12,19 +12,18 @@ usr=$(whoami)
 clear
 sleep_time=2
 
-mkdir P_O_S_T--I_N_S_T_A_L_L
-cd P_O_S_T--I_N_S_T_A_L_L
-echo -e "$(pwd)"
 
-
-<<<<<<< HEAD
 if [[ $usr != "root" ]]; then
 	echo "Script should be executed as 'root'!"
  	exit 1
 fi
 
-=======
->>>>>>> parent of 0704044 (Remove `sudo` from script)
+
+mkdir P_O_S_T--I_N_S_T_A_L_L
+cd P_O_S_T--I_N_S_T_A_L_L
+echo -e "$(pwd)"
+
+
 
 print()
 {
