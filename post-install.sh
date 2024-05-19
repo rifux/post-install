@@ -204,6 +204,9 @@ flatinstall net.werwolv.ImHex
 
 
 print "Installing Productivity software: general"
+flatinstall io.github.alainm23.planify
+flatinstall com.beavernotes.beavernotes
+flatinstall com.github.flxzt.rnote
 flatinstall com.toolstack.Folio
 flatinstall io.github.mrvladus.List
 flatinstall io.github.diegoivanme.flowtime
