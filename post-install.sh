@@ -17,11 +17,14 @@ cd P_O_S_T--I_N_S_T_A_L_L
 echo -e "$(pwd)"
 
 
+<<<<<<< HEAD
 if [[ $usr != "root" ]]; then
 	echo "Script should be executed as 'root'!"
  	exit 1
 fi
 
+=======
+>>>>>>> parent of 0704044 (Remove `sudo` from script)
 
 print()
 {
@@ -48,19 +51,19 @@ git_sparse_clone() {
 
 
 print "Creating symlink 'zy' to 'zypper'"
-ln -s /usr/bin/zypper /usr/bin/zy
+sudo ln -s /usr/bin/zypper /usr/bin/zy
 
 
 print "Removing PackageKit aka 'kill my system instead of update'"
-zy rm -u PackageKit
+sudo zy rm -u PackageKit
 
 
 print "Disabling recommended packages and openSUSE branding in 'zypp' conf"
-sed --quiet 's/# solver.onlyRequires = false/solver.onlyRequires = true/' /etc/zypp/zypp.conf
+sudo sed --quiet 's/# solver.onlyRequires = false/solver.onlyRequires = true/' /etc/zypp/zypp.conf
 
 
 print "Installing Vanilla Theming for installed software."
-zy in \
+sudo zy in \
 	branding-upstream libreoffice-branding-upstream NetworkManager-branding-upstream \
 	gdm-branding-upstream gio-branding-upstream gnome-menus-branding-upstream \
 	gtk2-branding-upstream gtk3-branding-upstream gtk4-branding-upstream
@@ -83,7 +86,7 @@ git_sparse_clone https://github.com/ryanoasis/nerd-fonts \
 print "Installing fonts"
 find nerd-fonts -type f -name "*.ttf" -exec mv {} . \;
 rm -rf nerd-fonts
-mv -v *.ttf /usr/share/fonts
+sudo mv -v *.ttf /usr/share/fonts
 
 
 print "Removing fish configs"
@@ -91,7 +94,7 @@ rm -rv /home/$usr/.config/fish
 
 
 print "Installing necessary software: work stuff, code editors, terminal, file manager, dev tools, etc."
-zy in --no-confirm	\
+sudo zy in --no-confirm	\
 	neovim micro-editor helix \
 	\
 	fish eza bat fd nnn btop progress bmon ncdu NetworkManager-tui fzf tealdeer zoxide \
@@ -131,15 +134,15 @@ zy in --no-confirm	\
 
 
 print "Enabling Docker service"
-systemctl enable --now docker
+sudo systemctl enable --now docker
 
 
 print "Adding $usr to Docker"
-usermod $usr -aG docker
+sudo usermod $usr -aG docker
 
 
 print "Enabling Power Profiles Daemon service"
-systemctl enable --now power-profiles-daemon
+sudo systemctl enable --now power-profiles-daemon
 
 
 print "Enabling 'zoxide'"
@@ -169,7 +172,7 @@ print()
 
 flatinstall()
 {
-	flatpak install --system --assumeyes \$1
+	sudo flatpak install --system --assumeyes \$1
 }
 
 print "Installing LocalSend"
@@ -316,14 +319,14 @@ EOL
 
 
 print "Installing LibreWolf"
-rpm --import https://rpm.librewolf.net/pubkey.gpg
-zy ar -ef https://rpm.librewolf.net librewolf
-zy ref 
-zy in --no-confirm librewolf
+sudo rpm --import https://rpm.librewolf.net/pubkey.gpg
+sudo zy ar -ef https://rpm.librewolf.net librewolf
+sudo zy ref 
+sudo zy in --no-confirm librewolf
 
 
 print "Installing Epiphany"
-zy in --no-confirm epiphany
+sudo zy in --no-confirm epiphany
 
 
 print "Installing LunarVIM"
@@ -331,11 +334,11 @@ LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.
 
 
 print "Removing useless apps: Firefox, Transmission, Evolution"
-zy rm -u MozillaFirefox transmission-gtk evolution
+sudo zy rm -u MozillaFirefox transmission-gtk evolution
 
 
 print "Changing $usr's shell to fish"
-chsh $usr -s /usr/bin/fish
+sudo chsh $usr -s /usr/bin/fish
 
 
 print "Installing fisher plugin installer for 'fish' shell"
@@ -369,7 +372,7 @@ tldr --update
 
 
 print "Upgrading openSUSE"
-zy dup --allow-arch-change
+sudo zy dup --allow-arch-change
 
 
 end_time=$(date +%s)
