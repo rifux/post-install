@@ -86,7 +86,7 @@ rm -rv /home/$usr/.config/fish
 
 
 print "Installing necessary software: work stuff, code editors, terminal, file manager, dev tools, etc."
-sudo zy in --no-confirm	\
+sudo zy in --no-confirm --auto-agree-with-licenses	\
 	neovim micro-editor helix \
 	\
 	fish eza bat fd nnn btop progress bmon ncdu NetworkManager-tui fzf tealdeer zoxide \
@@ -112,7 +112,7 @@ sudo zy in --no-confirm	\
 	\
 	pinta shotwell \
 	\
-	jetbrains-mono-fonts \
+	jetbrains-mono-fonts fetchmsttfonts \
 	\
 	keepassxc \
 	\
