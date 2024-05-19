@@ -153,6 +153,7 @@ source \$CONFIG_FISH_HOME/zoxide.fish
 EOL
 
 
+print "Installing Flatpak apps"
 cat >./install_flatpak_apps.sh <<EOL
 #!/usr/bin/sh
 rm ./install_flatpak_apps.sh
