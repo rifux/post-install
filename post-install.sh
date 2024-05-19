@@ -201,6 +201,7 @@ flatinstall io.github.nokse22.asciidraw
 flatinstall fyi.zoey.Boop-GTK
 flatinstall io.github.fizzyizzy05.binary
 flatinstall net.werwolv.ImHex
+flatinstall org.gaphor.Gaphor
 
 
 print "Installing Productivity software: general"
