@@ -205,6 +205,7 @@ flatinstall org.gaphor.Gaphor
 
 
 print "Installing Productivity software: general"
+flatinstall io.gitlab.idevecore.Pomodoro
 flatinstall io.github.alainm23.planify
 flatinstall com.beavernotes.beavernotes
 flatinstall com.github.flxzt.rnote
