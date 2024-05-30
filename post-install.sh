@@ -173,6 +173,7 @@ flatinstall flathub org.localsend.localsend_app
 
 
 print "Installing Media apps"
+flatinstall com.github.geigi.cozy
 flatinstall io.freetubeapp.FreeTube
 flatinstall io.gitlab.zehkira.Monophony
 flatinstall com.github.neithern.g4music
@@ -205,6 +206,7 @@ flatinstall org.gaphor.Gaphor
 
 
 print "Installing Productivity software: general"
+flatinstall org.onlyoffice.desktopeditors
 flatinstall io.gitlab.idevecore.Pomodoro
 flatinstall io.github.alainm23.planify
 flatinstall com.beavernotes.beavernotes
