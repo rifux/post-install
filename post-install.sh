@@ -122,7 +122,7 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
 	\
 	gnome-boxes virtualbox \
  	\
-  	torbrowser-launcher
+  	torbrowser-launcher angelfish
 
 
 print "Enabling Docker service"
@@ -193,6 +193,9 @@ flatinstall org.upscayl.Upscayl
 print "Installing Chatting software"
 flatinstall io.github.NhekoReborn.Nheko
 flatinstall im.fluffychat.Fluffychat
+flatinstall org.ferdium.Ferdium
+flatinstall chat.revolt.RevoltDesktop
+flatinstall io.github.milkshiift.GoofCord
 
 
 print "Installing Productivity software: coding"
@@ -209,8 +212,9 @@ print "Installing Productivity software: general"
 flatinstall org.onlyoffice.desktopeditors
 flatinstall io.gitlab.idevecore.Pomodoro
 flatinstall io.github.alainm23.planify
-flatinstall com.beavernotes.beavernotes
 flatinstall com.github.flxzt.rnote
+flatinstall com.github.tenderowl.frog
+flatinstall com.beavernotes.beavernotes
 flatinstall com.toolstack.Folio
 flatinstall io.github.mrvladus.List
 flatinstall io.github.diegoivanme.flowtime
@@ -226,6 +230,7 @@ flatinstall com.github.tchx84.Flatseal
 
 print "Installing gaming software"
 flatinstall page.kramo.Cartridges
+flatinstall org.ryujinx.Ryujinx
 
 echo -e "[ THE SCRIPT IS DONE. EXITING IN 5sec. ]"
 sleep 5
