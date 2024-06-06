@@ -122,7 +122,9 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
 	\
 	gnome-boxes virtualbox \
  	\
-  	torbrowser-launcher angelfish
+  	torbrowser-launcher angelfish \
+   	\
+    	godot
 
 
 print "Enabling Docker service"
