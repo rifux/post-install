@@ -183,7 +183,7 @@ flatinstall io.bassi.Amberol
 flatinstall com.github.unrud.VideoDownloader
 flatinstall net.fasterland.converseen
 flatinstall info.febvre.Komikku
-flatinstall io.github.giantpinkrobots.varia
+flatinstall net.agalwood.Motrix
 flatinstall io.github.jliljebl.Flowblade
 flatinstall com.github.wwmm.easyeffects
 
