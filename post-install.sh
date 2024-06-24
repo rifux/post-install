@@ -321,6 +321,7 @@ cat >/home/$usr/.config/VSCodium/User/settings.json <<EOL
 	"workbench.iconTheme": "material-icon-theme",
 	"cSpell.language": "en,ru",
 	"cmake.showOptionsMovedNotification": false,
+ 	"go.formatTool": "gofmt",
 } 
 EOL
 
