@@ -171,15 +171,15 @@ flatinstall()
 }
 
 print "Installing LocalSend"
-flatinstall flathub org.localsend.localsend_app
+flatinstall org.localsend.localsend_app
 
 
 print "Installing Media apps"
-flatinstall com.github.geigi.cozy
+# flatinstall com.github.geigi.cozy
 flatinstall io.freetubeapp.FreeTube
-flatinstall io.gitlab.zehkira.Monophony
+# flatinstall io.gitlab.zehkira.Monophony
 flatinstall com.github.neithern.g4music
-flatinstall io.bassi.Amberol
+# flatinstall io.bassi.Amberol
 flatinstall com.github.unrud.VideoDownloader
 flatinstall net.fasterland.converseen
 flatinstall info.febvre.Komikku
@@ -208,6 +208,7 @@ flatinstall fyi.zoey.Boop-GTK
 flatinstall io.github.fizzyizzy05.binary
 flatinstall net.werwolv.ImHex
 flatinstall org.gaphor.Gaphor
+flatinstall io.github.ungoogled_software.ungoogled_chromium
 
 
 print "Installing Productivity software: general"
@@ -217,16 +218,17 @@ flatinstall io.github.alainm23.planify
 flatinstall com.github.flxzt.rnote
 flatinstall com.github.tenderowl.frog
 flatinstall com.beavernotes.beavernotes
-flatinstall com.toolstack.Folio
-flatinstall io.github.mrvladus.List
-flatinstall io.github.diegoivanme.flowtime
+# flatinstall com.toolstack.Folio
+# flatinstall io.github.mrvladus.List
+# flatinstall io.github.diegoivanme.flowtime
 flatinstall io.crow_translate.CrowTranslate
 flatinstall io.github.nokse22.minitext
 flatinstall io.github.wazzaps.Fingerpaint
+flatinstall io.github.amit9838.mousam
 
 
 print "Installing customization software"
-flatinstall page.codeberg.libre_menu_editor.LibreMenuEditor
+# flatinstall page.codeberg.libre_menu_editor.LibreMenuEditor
 flatinstall com.github.tchx84.Flatseal
 
 
