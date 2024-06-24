@@ -61,29 +61,6 @@ sudo zy in \
 	gtk2-branding-upstream gtk3-branding-upstream gtk4-branding-upstream
 
 
-print "Downloading usable Nerd Fonts"
-git_sparse_clone https://github.com/ryanoasis/nerd-fonts \
-	"patched-fonts/NerdFontsSymbolsOnly" \
- 	"patched-fonts/Overpass" \
-	"patched-fonts/JetBrainsMono" \
-	"patched-fonts/Mononoki" \
-	"patched-fonts/FiraCode" \
-	"patched-fonts/IBMPlexMono" \
-	"patched-fonts/Ubuntu" \
-	"patched-fonts/UbuntuSans" \
-	"patched-fonts/UbuntuMono" \
-	"patched-fonts/Monoid"
-
-
-print "Installing fonts"
-find nerd-fonts -type f -name "*.ttf" -exec mv {} . \;
-rm -rf nerd-fonts
-sudo mv -v *.ttf /usr/share/fonts
-
-
-print "Removing fish configs"
-rm -rv /home/$usr/.config/fish
-
 
 print "Installing necessary software: work stuff, code editors, terminal, file manager, dev tools, etc."
 sudo zy in --no-confirm --auto-agree-with-licenses	\
@@ -125,6 +102,30 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
   	torbrowser-launcher angelfish \
    	\
     	godot
+
+
+print "Downloading usable Nerd Fonts"
+git_sparse_clone https://github.com/ryanoasis/nerd-fonts \
+	"patched-fonts/NerdFontsSymbolsOnly" \
+ 	"patched-fonts/Overpass" \
+	"patched-fonts/JetBrainsMono" \
+	"patched-fonts/Mononoki" \
+	"patched-fonts/FiraCode" \
+	"patched-fonts/IBMPlexMono" \
+	"patched-fonts/Ubuntu" \
+	"patched-fonts/UbuntuSans" \
+	"patched-fonts/UbuntuMono" \
+	"patched-fonts/Monoid"
+
+
+print "Installing fonts"
+find nerd-fonts -type f -name "*.ttf" -exec mv {} . \;
+rm -rf nerd-fonts
+sudo mv -v *.ttf /usr/share/fonts
+
+
+print "Removing fish configs"
+rm -rv /home/$usr/.config/fish
 
 
 print "Enabling Docker service"
