@@ -365,7 +365,7 @@ fish -c "fisher install IlanCosman/tide"
 echo -e "\n\n\n\n[      Let's Configure TIDE...     ]"
 echo -e ":    waiting 7s to attract user    :"
 sleep 7
-nohup $term "tide configure" >> /dev/null 2>&1 &
+nohup $term "fish -c 'tide configure'" >> /dev/null 2>&1 &
 
 
 print "Installing fzf hotkeys for 'fish' shell"
