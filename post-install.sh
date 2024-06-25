@@ -315,6 +315,7 @@ nohup $term "./install_vscodium_extensions.sh" >> /dev/null 2>&1 &
 
 
 print "Applying VSCodium settings"
+mkdir -rv /home/$usr/.config/VSCodium/User/
 cat >/home/$usr/.config/VSCodium/User/settings.json <<EOL
 {
 	"workbench.colorTheme": "Panda Syntax",
