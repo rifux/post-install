@@ -15,8 +15,124 @@ sleep_time=2
 mkdir P_O_S_T--I_N_S_T_A_L_L
 cd P_O_S_T--I_N_S_T_A_L_L
 echo -e "$(pwd)"
+term="gnome-terminal --"
 
+app_picker()
+{
+	dconf load /org/gnome/desktop/app-folders/ <<EOF
+[/]
+folder-children=['Utilities', 'YaST', 'Pardus', 'eConfig', 'SysConfig', 'Games', 'Chatting', 'DevToolbox', 'LOffice', 'BoardGames', 'WebBrowsers', 'DiskUtilities', 'SysObserving', 'GNOMEApps', 'Productivity', 'Unused', 'CLIApps', 'MediaEditing', 'TextWorks', 'DLs', 'utils']
 
+[folders/MediaEditing]
+apps=['io.github.jliljebl.Flowblade.desktop', 'gimp.desktop', 'org.upscayl.Upscayl.desktop', 'net.fasterland.converseen.desktop', 'pinta.desktop', 'org.bunkus.mkvtoolnix-gui.desktop']
+name='Media Editing'
+translate=false
+
+[folders/BoardGames]
+apps=['org.gnome.Chess.desktop', 'org.gnome.Mahjongg.desktop', 'org.gnome.SwellFoop.desktop', 'org.gnome.Sudoku.desktop', 'org.gnome.Reversi.desktop', 'org.gnome.Quadrapassel.desktop', 'org.gnome.Mines.desktop', 'org.gnome.LightsOff.desktop']
+name='Board Games'
+translate=false
+
+[folders/DiskUtilities]
+apps=['org.gnome.DiskUtility.desktop', 'org.gnome.baobab.desktop', 'org.bleachbit.BleachBit.desktop', 'org.bleachbit.BleachBit-root.desktop']
+name='Disk Utilities'
+translate=false
+
+[folders/CLIApps]
+apps=['helix.desktop', 'nvim.desktop', 'lvim.desktop']
+name='CLI Apps'
+translate=false
+
+[folders/Productivity]
+apps=['io.github.alainm23.planify.desktop', 'io.gitlab.idevecore.Pomodoro.desktop', 'com.github.flxzt.rnote.desktop', 'com.beavernotes.beavernotes.desktop', 'io.github.wazzaps.Fingerpaint.desktop']
+name='Productivity'
+translate=false
+
+[folders/utils]
+apps=['nemo.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Shotwell.desktop', 'mpv.desktop', 'org.gnome.Music.desktop']
+name='Utilities'
+translate=false
+
+[folders/Unused]
+apps=['org.gnome.Console.desktop', 'fish.desktop', 'org.opensuse.opensuse_welcome.desktop', 'xscreensaver.desktop', 'xterm.desktop', 'xscreensaver-settings.desktop']
+name='Other (Unused)'
+translate=false
+
+[folders/LOffice]
+apps=['libreoffice-startcenter.desktop', 'libreoffice-writer.desktop', 'libreoffice-impress.desktop', 'libreoffice-calc.desktop', 'libreoffice-base.desktop', 'libreoffice-draw.desktop', 'libreoffice-math.desktop']
+name='LibreOffice'
+translate=false
+
+[folders/GNOMEApps]
+apps=['org.gnome.Contacts.desktop', 'org.gnome.Weather.desktop', 'org.gnome.clocks.desktop', 'org.gnome.Maps.desktop', 'org.gnome.Photos.desktop', 'org.gnome.Totem.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.eog.desktop', 'yelp.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Cheese.desktop', 'org.gnome.TextEditor.desktop']
+name='GNOME Apps'
+translate=false
+
+[folders/TextWorks]
+apps=['com.github.tenderowl.frog.desktop', 'io.crow_translate.CrowTranslate.desktop', 'org.gnome.Characters.desktop']
+name='OCR, Translate, Text'
+translate=false
+
+[folders/WebBrowsers]
+apps=['librewolf.desktop', 'io.github.ungoogled_software.ungoogled_chromium.desktop', 'org.gnome.Epiphany.desktop', 'torbrowser.desktop', 'org.kde.angelfish.desktop', 'torbrowser-settings.desktop']
+name='Web Browsers'
+translate=false
+
+[folders/Chatting]
+apps=['im.nheko.Nheko.desktop', 'im.fluffychat.Fluffychat.desktop', 'chat.revolt.RevoltDesktop.desktop', 'io.github.milkshiift.GoofCord.desktop', 'org.gnome.Polari.desktop']
+name='Chatting'
+translate=false
+
+[folders/DLs]
+apps=['com.github.unrud.VideoDownloader.desktop', 'net.agalwood.Motrix.desktop', 'org.qbittorrent.qBittorrent.desktop']
+name='Downloaders'
+translate=false
+
+[folders/SysConfig]
+apps=['org.gnome.Settings.desktop', 'org.gnome.Extensions.desktop', 'ca.desrt.dconf-editor.desktop', 'org.gnome.tweaks.desktop', 'com.github.wwmm.easyeffects.desktop', 'org.gnome.seahorse.Application.desktop', 'com.github.tchx84.Flatseal.desktop', 'system-config-printer.desktop', 'enlightenment_fprint.desktop', 'vinagre.desktop', 'gpk-prefs.desktop', 'org.gnome.PackageUpdater.desktop']
+name='Sys. Configuration'
+translate=false
+
+[folders/eConfig]
+apps=['elementary_config.desktop', 'elementary_perf.desktop', 'enlightenment_paledit.desktop']
+name="'e' Configuration"
+translate=false
+
+[folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Usage.desktop']
+categories=['X-GNOME-Utilities']
+excluded-apps=['org.gnome.tweaks.desktop', 'org.gnome.DiskUtility.desktop', 'xterm.desktop', 'vinagre.desktop', 'org.gnome.Console.desktop', 'org.gnome.Characters.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Evince.desktop', 'org.gnome.baobab.desktop', 'org.gnome.FileRoller.desktop']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[folders/DevToolbox]
+apps=['io.github.fizzyizzy05.binary.desktop', 'org.gaphor.Gaphor.desktop', 'net.werwolv.ImHex.desktop', 'io.github.nokse22.asciidraw.desktop', 'org.gnome.Meld.desktop', 'fyi.zoey.Boop-GTK.desktop', 'io.github.nokse22.minitext.desktop', 'com.mardojai.ForgeSparks.desktop', 'com.jetpackduba.Gitnuro.desktop']
+name='Dev. Toolbox'
+translate=false
+
+[folders/SysObserving]
+apps=['org.gnome.SystemMonitor.desktop', 'org.gnome.PowerStats.desktop', 'btop.desktop', 'org.gnome.Logs.desktop', 'bmon.desktop']
+name='Sys. Observing'
+translate=false
+
+[folders/Games]
+apps=['page.kramo.Cartridges.desktop', 'org.ryujinx.Ryujinx.desktop', 'org.godotengine.Godot.desktop']
+name='Games'
+
+EOF
+	gsettings set org.gnome.shell favorite-apps "[]"
+	gsettings set org.gnome.shell app-picker-layout "[{'org.ferdium.Ferdium.desktop': <{'position': <0>}>, 'Chatting': <{'position': <1>}>, 'com.github.neithern.g4music.desktop': <{'position': <2>}>, 'MediaEditing': <{'position': <3>}>, 'org.gnome.Software.desktop': <{'position': <4>}>, 'DLs': <{'position': <5>}>, 'org.localsend.localsend_app.desktop': <{'position': <6>}>, 'WebBrowsers': <{'position': <7>}>, 'simple-scan.desktop': <{'position': <8>}>, 'TextWorks': <{'position': <9>}>, 'io.github.amit9838.mousam.desktop': <{'position': <10>}>, 'utils': <{'position': <11>}>, 'org.gnome.Calculator.desktop': <{'position': <12>}>, 'GNOMEApps': <{'position': <13>}>}, {'org.onlyoffice.desktopeditors.desktop': <{'position': <0>}>, 'LOffice': <{'position': <1>}>, 'thunderbird.desktop': <{'position': <2>}>, 'Productivity': <{'position': <3>}>, 'codium.desktop': <{'position': <4>}>, 'DevToolbox': <{'position': <5>}>, 'terminology.desktop': <{'position': <6>}>, 'CLIApps': <{'position': <7>}>}, {'info.febvre.Komikku.desktop': <{'position': <0>}>, 'io.freetubeapp.FreeTube.desktop': <{'position': <1>}>, 'Games': <{'position': <2>}>, 'BoardGames': <{'position': <3>}>}, {'org.gnome.Boxes.desktop': <{'position': <0>}>, 'virtualbox.desktop': <{'position': <1>}>, 'SysConfig': <{'position': <2>}>, 'SysObserving': <{'position': <3>}>, 'DiskUtilities': <{'position': <4>}>, 'org.opensuse.YaST.desktop': <{'position': <5>}>, 'YaST': <{'position': <6>}>, 'eConfig': <{'position': <7>}>, 'org.keepassxc.KeePassXC.desktop': <{'position': <8>}>, 'Unused': <{'position': <9>}>}]"
+}
 
 print()
 {
@@ -61,6 +177,49 @@ sudo zy in \
 	gtk2-branding-upstream gtk3-branding-upstream gtk4-branding-upstream
 
 
+
+print "Installing necessary software: work stuff, code editors, terminal, file manager, dev tools, etc."
+sudo zy in --no-confirm --auto-agree-with-licenses	\
+	neovim micro-editor helix \
+	\
+	fish eza bat fd nnn btop progress bmon ncdu NetworkManager-tui fzf tealdeer zoxide \
+	\
+	terminology terminology-theme-upstream enlightenment enlightenment-branding-upstream \
+	\
+	mpv \
+	\
+	mkvtoolnix-gui \
+	\
+	qbittorrent \
+	\
+	nemo nemo-extension-audio-tab nemo-extension-compare \
+	nemo-extension-image-converter nemo-extension-preview \
+	\
+	golang gopls git \
+	\
+	gnome-power-manager power-profiles-daemon \
+	\
+	opi \
+	\
+	docker \
+	\
+	pinta shotwell \
+	\
+	jetbrains-mono-fonts fetchmsttfonts \
+	\
+	keepassxc \
+	\
+	MozillaThunderbird \
+	\
+	bleachbit \
+	\
+	gnome-boxes virtualbox \
+ 	\
+  	torbrowser-launcher angelfish \
+   	\
+    	godot
+
+
 print "Downloading usable Nerd Fonts"
 git_sparse_clone https://github.com/ryanoasis/nerd-fonts \
 	"patched-fonts/NerdFontsSymbolsOnly" \
@@ -83,46 +242,6 @@ sudo mv -v *.ttf /usr/share/fonts
 
 print "Removing fish configs"
 rm -rv /home/$usr/.config/fish
-
-
-print "Installing necessary software: work stuff, code editors, terminal, file manager, dev tools, etc."
-sudo zy in --no-confirm	\
-	neovim micro-editor helix \
-	\
-	fish eza bat fd nnn btop progress bmon ncdu NetworkManager-tui fzf tealdeer zoxide \
-	\
-	terminology enlightenment \
-	\
-	mpv \
-	\
-	mkvtoolnix-gui \
-	\
-	qbittorrent \
-	\
-	nemo nemo-extension-audio-tab nemo-extension-compare \
-	nemo-extension-image-converter nemo-extension-preview \
-	\
-	golang gopls git \
-	\
-	gnome-power-manager power-profiles-daemon \
-	\
-	opi \
-	\
-	docker \
-	\
-	pinta shotwell \
-	\
-	jetbrains-mono-fonts \
-	\
-	keepassxc \
-	\
-	MozillaThunderbird endeavour \
-	\
-	bleachbit \
-	\
-	gnome-boxes virtualbox \
- 	\
-  	torbrowser-launcher
 
 
 print "Enabling Docker service"
@@ -169,18 +288,19 @@ flatinstall()
 }
 
 print "Installing LocalSend"
-flatinstall flathub org.localsend.localsend_app
+flatinstall org.localsend.localsend_app
 
 
 print "Installing Media apps"
+# flatinstall com.github.geigi.cozy
 flatinstall io.freetubeapp.FreeTube
-flatinstall io.gitlab.zehkira.Monophony
+# flatinstall io.gitlab.zehkira.Monophony
 flatinstall com.github.neithern.g4music
-flatinstall io.bassi.Amberol
+# flatinstall io.bassi.Amberol
 flatinstall com.github.unrud.VideoDownloader
 flatinstall net.fasterland.converseen
 flatinstall info.febvre.Komikku
-flatinstall io.github.giantpinkrobots.varia
+flatinstall net.agalwood.Motrix
 flatinstall io.github.jliljebl.Flowblade
 flatinstall com.github.wwmm.easyeffects
 
@@ -192,6 +312,9 @@ flatinstall org.upscayl.Upscayl
 print "Installing Chatting software"
 flatinstall io.github.NhekoReborn.Nheko
 flatinstall im.fluffychat.Fluffychat
+flatinstall org.ferdium.Ferdium
+flatinstall chat.revolt.RevoltDesktop
+flatinstall io.github.milkshiift.GoofCord
 
 
 print "Installing Productivity software: coding"
@@ -201,24 +324,34 @@ flatinstall io.github.nokse22.asciidraw
 flatinstall fyi.zoey.Boop-GTK
 flatinstall io.github.fizzyizzy05.binary
 flatinstall net.werwolv.ImHex
+flatinstall org.gaphor.Gaphor
+flatinstall io.github.ungoogled_software.ungoogled_chromium
 
 
 print "Installing Productivity software: general"
-flatinstall com.toolstack.Folio
-flatinstall io.github.mrvladus.List
-flatinstall io.github.diegoivanme.flowtime
+flatinstall org.onlyoffice.desktopeditors
+flatinstall io.gitlab.idevecore.Pomodoro
+flatinstall io.github.alainm23.planify
+flatinstall com.github.flxzt.rnote
+flatinstall com.github.tenderowl.frog
+flatinstall com.beavernotes.beavernotes
+# flatinstall com.toolstack.Folio
+# flatinstall io.github.mrvladus.List
+# flatinstall io.github.diegoivanme.flowtime
 flatinstall io.crow_translate.CrowTranslate
 flatinstall io.github.nokse22.minitext
 flatinstall io.github.wazzaps.Fingerpaint
+flatinstall io.github.amit9838.mousam
 
 
 print "Installing customization software"
-flatinstall page.codeberg.libre_menu_editor.LibreMenuEditor
+# flatinstall page.codeberg.libre_menu_editor.LibreMenuEditor
 flatinstall com.github.tchx84.Flatseal
 
 
 print "Installing gaming software"
 flatinstall page.kramo.Cartridges
+flatinstall org.ryujinx.Ryujinx
 
 echo -e "[ THE SCRIPT IS DONE. EXITING IN 5sec. ]"
 sleep 5
@@ -228,7 +361,7 @@ EOL
 chmod +x install_flatpak_apps.sh
 
 
-nohup terminology -e "./install_flatpak_apps.sh" >> /dev/null 2>&1 &
+nohup $term "./install_flatpak_apps.sh" >> /dev/null 2>&1 &
 
 
 
@@ -293,10 +426,11 @@ EOL
 chmod +x install_vscodium_extensions.sh
 
 
-nohup terminology -e "./install_vscodium_extensions.sh" >> /dev/null 2>&1 &
+nohup $term "./install_vscodium_extensions.sh" >> /dev/null 2>&1 &
 
 
 print "Applying VSCodium settings"
+mkdir -pv /home/$usr/.config/VSCodium/User/
 cat >/home/$usr/.config/VSCodium/User/settings.json <<EOL
 {
 	"workbench.colorTheme": "Panda Syntax",
@@ -307,6 +441,7 @@ cat >/home/$usr/.config/VSCodium/User/settings.json <<EOL
 	"workbench.iconTheme": "material-icon-theme",
 	"cSpell.language": "en,ru",
 	"cmake.showOptionsMovedNotification": false,
+ 	"go.formatTool": "gofmt",
 } 
 EOL
 
@@ -342,12 +477,6 @@ print "Installing TIDE prompt for 'fish' shell"
 fish -c "fisher install IlanCosman/tide"
 
 
-echo -e "\n\n\n\n[      Let's Configure TIDE...     ]"
-echo -e ":    waiting 7s to attract user    :"
-sleep 7
-nohup terminology -e "tide configure" >> /dev/null 2>&1 &
-
-
 print "Installing fzf hotkeys for 'fish' shell"
 fish -c "fisher install PatrickF1/fzf.fish"
 
@@ -366,6 +495,20 @@ tldr --update
 
 print "Upgrading openSUSE"
 sudo zy dup --allow-arch-change
+
+
+echo -e "\n\n\n\n[      Let's Configure TIDE...     ]"
+echo -e ":    waiting 7s to attract user    :"
+sleep 7
+fish -c "tide configure"
+
+
+print "Configuring GNOME App Picker Layout"
+app_picker
+app_picker
+app_picker
+app_picker
+app_picker
 
 
 end_time=$(date +%s)
