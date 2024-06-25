@@ -15,6 +15,7 @@ sleep_time=2
 mkdir P_O_S_T--I_N_S_T_A_L_L
 cd P_O_S_T--I_N_S_T_A_L_L
 echo -e "$(pwd)"
+term="gnome-terminal --"
 
 
 
@@ -245,7 +246,7 @@ EOL
 chmod +x install_flatpak_apps.sh
 
 
-nohup terminology -e "./install_flatpak_apps.sh" >> /dev/null 2>&1 &
+nohup $term "./install_flatpak_apps.sh" >> /dev/null 2>&1 &
 
 
 
@@ -310,7 +311,7 @@ EOL
 chmod +x install_vscodium_extensions.sh
 
 
-nohup terminology -e "./install_vscodium_extensions.sh" >> /dev/null 2>&1 &
+nohup $term "./install_vscodium_extensions.sh" >> /dev/null 2>&1 &
 
 
 print "Applying VSCodium settings"
@@ -363,7 +364,7 @@ fish -c "fisher install IlanCosman/tide"
 echo -e "\n\n\n\n[      Let's Configure TIDE...     ]"
 echo -e ":    waiting 7s to attract user    :"
 sleep 7
-nohup terminology -e "tide configure" >> /dev/null 2>&1 &
+nohup $term "tide configure" >> /dev/null 2>&1 &
 
 
 print "Installing fzf hotkeys for 'fish' shell"
