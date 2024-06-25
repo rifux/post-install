@@ -17,7 +17,122 @@ cd P_O_S_T--I_N_S_T_A_L_L
 echo -e "$(pwd)"
 term="gnome-terminal --"
 
+app_picker()
+{
+	dconf load /org/gnome/desktop/app-folders/ <<EOF
+[/]
+folder-children=['Utilities', 'YaST', 'Pardus', 'eConfig', 'SysConfig', 'Games', 'Chatting', 'DevToolbox', 'LOffice', 'BoardGames', 'WebBrowsers', 'DiskUtilities', 'SysObserving', 'GNOMEApps', 'Productivity', 'Unused', 'CLIApps', 'MediaEditing', 'TextWorks', 'DLs', 'utils']
 
+[folders/MediaEditing]
+apps=['io.github.jliljebl.Flowblade.desktop', 'gimp.desktop', 'org.upscayl.Upscayl.desktop', 'net.fasterland.converseen.desktop', 'pinta.desktop', 'org.bunkus.mkvtoolnix-gui.desktop']
+name='Media Editing'
+translate=false
+
+[folders/BoardGames]
+apps=['org.gnome.Chess.desktop', 'org.gnome.Mahjongg.desktop', 'org.gnome.SwellFoop.desktop', 'org.gnome.Sudoku.desktop', 'org.gnome.Reversi.desktop', 'org.gnome.Quadrapassel.desktop', 'org.gnome.Mines.desktop', 'org.gnome.LightsOff.desktop']
+name='Board Games'
+translate=false
+
+[folders/DiskUtilities]
+apps=['org.gnome.DiskUtility.desktop', 'org.gnome.baobab.desktop', 'org.bleachbit.BleachBit.desktop', 'org.bleachbit.BleachBit-root.desktop']
+name='Disk Utilities'
+translate=false
+
+[folders/CLIApps]
+apps=['helix.desktop', 'nvim.desktop']
+name='CLI Apps'
+translate=false
+
+[folders/Productivity]
+apps=['io.github.alainm23.planify.desktop', 'io.gitlab.idevecore.Pomodoro.desktop', 'com.github.flxzt.rnote.desktop', 'com.beavernotes.beavernotes.desktop', 'io.github.wazzaps.Fingerpaint.desktop']
+name='Productivity'
+translate=false
+
+[folders/utils]
+apps=['nemo.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Shotwell.desktop', 'mpv.desktop', 'org.gnome.Music.desktop']
+name='Utilities'
+translate=false
+
+[folders/Unused]
+apps=['org.gnome.Console.desktop', 'fish.desktop', 'org.opensuse.opensuse_welcome.desktop', 'xscreensaver.desktop', 'xterm.desktop', 'xscreensaver-settings.desktop']
+name='Other (Unused)'
+translate=false
+
+[folders/LOffice]
+apps=['libreoffice-startcenter.desktop', 'libreoffice-writer.desktop', 'libreoffice-impress.desktop', 'libreoffice-calc.desktop', 'libreoffice-base.desktop', 'libreoffice-draw.desktop', 'libreoffice-math.desktop']
+name='LibreOffice'
+translate=false
+
+[folders/GNOMEApps]
+apps=['org.gnome.Contacts.desktop', 'org.gnome.Weather.desktop', 'org.gnome.clocks.desktop', 'org.gnome.Maps.desktop', 'org.gnome.Photos.desktop', 'org.gnome.Totem.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.eog.desktop', 'yelp.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Cheese.desktop', 'org.gnome.TextEditor.desktop']
+name='GNOME Apps'
+translate=false
+
+[folders/TextWorks]
+apps=['com.github.tenderowl.frog.desktop', 'io.crow_translate.CrowTranslate.desktop', 'org.gnome.Characters.desktop']
+name='OCR, Translate, Text'
+translate=false
+
+[folders/WebBrowsers]
+apps=['librewolf.desktop', 'io.github.ungoogled_software.ungoogled_chromium.desktop', 'org.gnome.Epiphany.desktop', 'torbrowser.desktop', 'org.kde.angelfish.desktop', 'torbrowser-settings.desktop']
+name='Web Browsers'
+translate=false
+
+[folders/Chatting]
+apps=['im.nheko.Nheko.desktop', 'im.fluffychat.Fluffychat.desktop', 'chat.revolt.RevoltDesktop.desktop', 'io.github.milkshiift.GoofCord.desktop', 'org.gnome.Polari.desktop']
+name='Chatting'
+translate=false
+
+[folders/DLs]
+apps=['com.github.unrud.VideoDownloader.desktop', 'net.agalwood.Motrix.desktop', 'org.qbittorrent.qBittorrent.desktop']
+name='Downloaders'
+translate=false
+
+[folders/SysConfig]
+apps=['org.gnome.Settings.desktop', 'org.gnome.Extensions.desktop', 'ca.desrt.dconf-editor.desktop', 'org.gnome.tweaks.desktop', 'com.github.wwmm.easyeffects.desktop', 'org.gnome.seahorse.Application.desktop', 'com.github.tchx84.Flatseal.desktop', 'system-config-printer.desktop', 'enlightenment_fprint.desktop', 'vinagre.desktop', 'gpk-prefs.desktop', 'org.gnome.PackageUpdater.desktop']
+name='Sys. Configuration'
+translate=false
+
+[folders/eConfig]
+apps=['elementary_config.desktop', 'elementary_perf.desktop', 'enlightenment_paledit.desktop']
+name="'e' Configuration"
+translate=false
+
+[folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Usage.desktop']
+categories=['X-GNOME-Utilities']
+excluded-apps=['org.gnome.tweaks.desktop', 'org.gnome.DiskUtility.desktop', 'xterm.desktop', 'vinagre.desktop', 'org.gnome.Console.desktop', 'org.gnome.Characters.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Evince.desktop', 'org.gnome.baobab.desktop', 'org.gnome.FileRoller.desktop']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[folders/DevToolbox]
+apps=['io.github.fizzyizzy05.binary.desktop', 'org.gaphor.Gaphor.desktop', 'net.werwolv.ImHex.desktop', 'io.github.nokse22.asciidraw.desktop', 'org.gnome.Meld.desktop', 'fyi.zoey.Boop-GTK.desktop', 'io.github.nokse22.minitext.desktop', 'com.mardojai.ForgeSparks.desktop', 'com.jetpackduba.Gitnuro.desktop']
+name='Dev. Toolbox'
+translate=false
+
+[folders/SysObserving]
+apps=['org.gnome.SystemMonitor.desktop', 'org.gnome.PowerStats.desktop', 'btop.desktop', 'org.gnome.Logs.desktop', 'bmon.desktop']
+name='Sys. Observing'
+translate=false
+
+[folders/Games]
+apps=['page.kramo.Cartridges.desktop', 'org.ryujinx.Ryujinx.desktop', 'org.godotengine.Godot.desktop']
+name='Games'
+
+EOF
+	gsettings set org.gnome.shell favorite-apps "[]"
+	gsettings set org.gnome.shell app-picker-layout "[{'org.ferdium.Ferdium.desktop': <{'position': <0>}>, 'Chatting': <{'position': <1>}>, 'com.github.neithern.g4music.desktop': <{'position': <2>}>, 'MediaEditing': <{'position': <3>}>, 'org.gnome.Software.desktop': <{'position': <4>}>, 'DLs': <{'position': <5>}>, 'org.localsend.localsend_app.desktop': <{'position': <6>}>, 'WebBrowsers': <{'position': <7>}>, 'simple-scan.desktop': <{'position': <8>}>, 'TextWorks': <{'position': <9>}>, 'io.github.amit9838.mousam.desktop': <{'position': <10>}>, 'utils': <{'position': <11>}>, 'org.gnome.Calculator.desktop': <{'position': <12>}>, 'GNOMEApps': <{'position': <13>}>}, {'org.onlyoffice.desktopeditors.desktop': <{'position': <0>}>, 'LOffice': <{'position': <1>}>, 'thunderbird.desktop': <{'position': <2>}>, 'Productivity': <{'position': <3>}>, 'codium.desktop': <{'position': <4>}>, 'DevToolbox': <{'position': <5>}>, 'terminology.desktop': <{'position': <6>}>, 'CLIApps': <{'position': <7>}>}, {'info.febvre.Komikku.desktop': <{'position': <0>}>, 'io.freetubeapp.FreeTube.desktop': <{'position': <1>}>, 'Games': <{'position': <2>}>, 'BoardGames': <{'position': <3>}>}, {'org.gnome.Boxes.desktop': <{'position': <0>}>, 'virtualbox.desktop': <{'position': <1>}>, 'SysConfig': <{'position': <2>}>, 'SysObserving': <{'position': <3>}>, 'DiskUtilities': <{'position': <4>}>, 'org.opensuse.YaST.desktop': <{'position': <5>}>, 'YaST': <{'position': <6>}>, 'eConfig': <{'position': <7>}>, 'org.keepassxc.KeePassXC.desktop': <{'position': <8>}>, 'Unused': <{'position': <9>}>}]"
+}
 
 print()
 {
@@ -388,127 +503,12 @@ sleep 7
 fish -c "tide configure"
 
 
-
-
-
 print "Configuring GNOME App Picker Layout"
-dconf load /org/gnome/desktop/app-folders/ <<EOF
-[/]
-folder-children=['Utilities', 'YaST', 'Pardus', 'eConfig', 'SysConfig', 'Games', 'Chatting', 'DevToolbox', 'LOffice', 'BoardGames', 'WebBrowsers', 'DiskUtilities', 'SysObserving', 'GNOMEApps', 'Productivity', 'Unused', 'CLIApps', 'MediaEditing', 'TextWorks', 'DLs', 'utils']
-
-[folders/MediaEditing]
-apps=['io.github.jliljebl.Flowblade.desktop', 'gimp.desktop', 'org.upscayl.Upscayl.desktop', 'net.fasterland.converseen.desktop', 'pinta.desktop', 'org.bunkus.mkvtoolnix-gui.desktop']
-name='Media Editing'
-translate=false
-
-[folders/BoardGames]
-apps=['org.gnome.Chess.desktop', 'org.gnome.Mahjongg.desktop', 'org.gnome.SwellFoop.desktop', 'org.gnome.Sudoku.desktop', 'org.gnome.Reversi.desktop', 'org.gnome.Quadrapassel.desktop', 'org.gnome.Mines.desktop', 'org.gnome.LightsOff.desktop']
-name='Board Games'
-translate=false
-
-[folders/DiskUtilities]
-apps=['org.gnome.DiskUtility.desktop', 'org.gnome.baobab.desktop', 'org.bleachbit.BleachBit.desktop', 'org.bleachbit.BleachBit-root.desktop']
-name='Disk Utilities'
-translate=false
-
-[folders/CLIApps]
-apps=['helix.desktop', 'nvim.desktop']
-name='CLI Apps'
-translate=false
-
-[folders/Productivity]
-apps=['io.github.alainm23.planify.desktop', 'io.gitlab.idevecore.Pomodoro.desktop', 'com.github.flxzt.rnote.desktop', 'com.beavernotes.beavernotes.desktop', 'io.github.wazzaps.Fingerpaint.desktop']
-name='Productivity'
-translate=false
-
-[folders/utils]
-apps=['nemo.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Shotwell.desktop', 'mpv.desktop', 'org.gnome.Music.desktop']
-name='Utilities'
-translate=false
-
-[folders/Unused]
-apps=['org.gnome.Console.desktop', 'fish.desktop', 'org.opensuse.opensuse_welcome.desktop', 'xscreensaver.desktop', 'xterm.desktop', 'xscreensaver-settings.desktop']
-name='Other (Unused)'
-translate=false
-
-[folders/LOffice]
-apps=['libreoffice-startcenter.desktop', 'libreoffice-writer.desktop', 'libreoffice-impress.desktop', 'libreoffice-calc.desktop', 'libreoffice-base.desktop', 'libreoffice-draw.desktop', 'libreoffice-math.desktop']
-name='LibreOffice'
-translate=false
-
-[folders/GNOMEApps]
-apps=['org.gnome.Contacts.desktop', 'org.gnome.Weather.desktop', 'org.gnome.clocks.desktop', 'org.gnome.Maps.desktop', 'org.gnome.Photos.desktop', 'org.gnome.Totem.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.eog.desktop', 'yelp.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Cheese.desktop', 'org.gnome.TextEditor.desktop']
-name='GNOME Apps'
-translate=false
-
-[folders/TextWorks]
-apps=['com.github.tenderowl.frog.desktop', 'io.crow_translate.CrowTranslate.desktop', 'org.gnome.Characters.desktop']
-name='OCR, Translate, Text'
-translate=false
-
-[folders/WebBrowsers]
-apps=['librewolf.desktop', 'io.github.ungoogled_software.ungoogled_chromium.desktop', 'org.gnome.Epiphany.desktop', 'torbrowser.desktop', 'org.kde.angelfish.desktop', 'torbrowser-settings.desktop']
-name='Web Browsers'
-translate=false
-
-[folders/Chatting]
-apps=['im.nheko.Nheko.desktop', 'im.fluffychat.Fluffychat.desktop', 'chat.revolt.RevoltDesktop.desktop', 'io.github.milkshiift.GoofCord.desktop', 'org.gnome.Polari.desktop']
-name='Chatting'
-translate=false
-
-[folders/DLs]
-apps=['com.github.unrud.VideoDownloader.desktop', 'net.agalwood.Motrix.desktop', 'org.qbittorrent.qBittorrent.desktop']
-name='Downloaders'
-translate=false
-
-[folders/SysConfig]
-apps=['org.gnome.Settings.desktop', 'org.gnome.Extensions.desktop', 'ca.desrt.dconf-editor.desktop', 'org.gnome.tweaks.desktop', 'com.github.wwmm.easyeffects.desktop', 'org.gnome.seahorse.Application.desktop', 'com.github.tchx84.Flatseal.desktop', 'system-config-printer.desktop', 'enlightenment_fprint.desktop', 'vinagre.desktop', 'gpk-prefs.desktop', 'org.gnome.PackageUpdater.desktop']
-name='Sys. Configuration'
-translate=false
-
-[folders/eConfig]
-apps=['elementary_config.desktop', 'elementary_perf.desktop', 'enlightenment_paledit.desktop']
-name="'e' Configuration"
-translate=false
-
-[folders/Pardus]
-categories=['X-Pardus-Apps']
-name='X-Pardus-Apps.directory'
-translate=true
-
-[folders/Utilities]
-apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Usage.desktop']
-categories=['X-GNOME-Utilities']
-excluded-apps=['org.gnome.tweaks.desktop', 'org.gnome.DiskUtility.desktop', 'xterm.desktop', 'vinagre.desktop', 'org.gnome.Console.desktop', 'org.gnome.Characters.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Evince.desktop', 'org.gnome.baobab.desktop', 'org.gnome.FileRoller.desktop']
-name='X-GNOME-Utilities.directory'
-translate=true
-
-[folders/YaST]
-categories=['X-SuSE-YaST']
-name='suse-yast.directory'
-translate=true
-
-[folders/DevToolbox]
-apps=['io.github.fizzyizzy05.binary.desktop', 'org.gaphor.Gaphor.desktop', 'net.werwolv.ImHex.desktop', 'io.github.nokse22.asciidraw.desktop', 'org.gnome.Meld.desktop', 'fyi.zoey.Boop-GTK.desktop', 'io.github.nokse22.minitext.desktop', 'com.mardojai.ForgeSparks.desktop', 'com.jetpackduba.Gitnuro.desktop']
-name='Dev. Toolbox'
-translate=false
-
-[folders/SysObserving]
-apps=['org.gnome.SystemMonitor.desktop', 'org.gnome.PowerStats.desktop', 'btop.desktop', 'org.gnome.Logs.desktop', 'bmon.desktop']
-name='Sys. Observing'
-translate=false
-
-[folders/Games]
-apps=['page.kramo.Cartridges.desktop', 'org.ryujinx.Ryujinx.desktop', 'org.godotengine.Godot.desktop']
-name='Games'
-
-EOF
-gsettings set org.gnome.shell favorite-apps "[]"
-gsettings set org.gnome.shell app-picker-layout "[{'org.ferdium.Ferdium.desktop': <{'position': <0>}>, 'Chatting': <{'position': <1>}>, 'com.github.neithern.g4music.desktop': <{'position': <2>}>, 'MediaEditing': <{'position': <3>}>, 'org.gnome.Software.desktop': <{'position': <4>}>, 'DLs': <{'position': <5>}>, 'org.localsend.localsend_app.desktop': <{'position': <6>}>, 'WebBrowsers': <{'position': <7>}>, 'simple-scan.desktop': <{'position': <8>}>, 'TextWorks': <{'position': <9>}>, 'io.github.amit9838.mousam.desktop': <{'position': <10>}>, 'utils': <{'position': <11>}>, 'org.gnome.Calculator.desktop': <{'position': <12>}>, 'GNOMEApps': <{'position': <13>}>}, {'org.onlyoffice.desktopeditors.desktop': <{'position': <0>}>, 'LOffice': <{'position': <1>}>, 'thunderbird.desktop': <{'position': <2>}>, 'Productivity': <{'position': <3>}>, 'codium.desktop': <{'position': <4>}>, 'DevToolbox': <{'position': <5>}>, 'terminology.desktop': <{'position': <6>}>, 'CLIApps': <{'position': <7>}>}, {'info.febvre.Komikku.desktop': <{'position': <0>}>, 'io.freetubeapp.FreeTube.desktop': <{'position': <1>}>, 'Games': <{'position': <2>}>, 'BoardGames': <{'position': <3>}>}, {'org.gnome.Boxes.desktop': <{'position': <0>}>, 'virtualbox.desktop': <{'position': <1>}>, 'SysConfig': <{'position': <2>}>, 'SysObserving': <{'position': <3>}>, 'DiskUtilities': <{'position': <4>}>, 'org.opensuse.YaST.desktop': <{'position': <5>}>, 'YaST': <{'position': <6>}>, 'eConfig': <{'position': <7>}>, 'org.keepassxc.KeePassXC.desktop': <{'position': <8>}>, 'Unused': <{'position': <9>}>}]"
-
-
-
-
+app_picker
+app_picker
+app_picker
+app_picker
+app_picker
 
 
 end_time=$(date +%s)
