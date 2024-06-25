@@ -94,7 +94,7 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
 	\
 	keepassxc \
 	\
-	MozillaThunderbird endeavour \
+	MozillaThunderbird \
 	\
 	bleachbit \
 	\
