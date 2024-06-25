@@ -39,7 +39,7 @@ name='Disk Utilities'
 translate=false
 
 [folders/CLIApps]
-apps=['helix.desktop', 'nvim.desktop']
+apps=['helix.desktop', 'nvim.desktop', 'lvim.desktop']
 name='CLI Apps'
 translate=false
 
