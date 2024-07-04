@@ -159,6 +159,26 @@ git_sparse_clone() {
 
 
 
+
+for arg in $*; do case $arg in
+    custom | customization | dots | dot-files | dotfiles | .files )
+    	echo -e "Coming soon.."
+     	exit
+        ;;
+    apps | configure-apps | appmenu | menu | app-picker | app-picker-layout | apppicker )
+        app_picker
+	app_picker
+ 	app_picker
+        app_picker
+	app_picker
+ 	echo -e "> App-picker layout should be configured now"
+  	exit
+	;;
+esac; shift; done
+
+
+
+
 print "Creating symlink 'zy' to 'zypper'"
 sudo ln -s /usr/bin/zypper /usr/bin/zy
 
