@@ -12,9 +12,6 @@ usr=$(whoami)
 clear
 sleep_time=2
 
-mkdir P_O_S_T--I_N_S_T_A_L_L
-cd P_O_S_T--I_N_S_T_A_L_L
-echo -e "$(pwd)"
 term="gnome-terminal --"
 
 app_picker()
@@ -177,6 +174,11 @@ for arg in $*; do case $arg in
 esac; shift; done
 
 
+
+
+mkdir P_O_S_T--I_N_S_T_A_L_L
+cd P_O_S_T--I_N_S_T_A_L_L
+echo -e "$(pwd)"
 
 
 print "Creating symlink 'zy' to 'zypper'"
