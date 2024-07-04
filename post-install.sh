@@ -134,7 +134,18 @@ EOF
 
 customization_appDefaults()
 {
-	xdg-mime default nemo.desktop inode/directory   # Nemo as default File Manager
+	xdg-mime default nemo.desktop inode/directory   	# Nemo as default File Manager
+	xdg-settings set default-web-browser librewolf.desktop	# LibreWolf as default web browser
+}
+
+customization_full()
+{
+	customization_appPicker
+ 	customization_appPicker
+	customization_appPicker
+	customization_appPicker
+	customization_appPicker
+	customization_appDefaults
 }
 
 script_print()
@@ -164,15 +175,15 @@ script_gitSparceClone() {
 
 for arg in $*; do case $arg in
     custom | customization | dots | dot-files | dotfiles | .files )
-    	echo -e "Coming soon.."
+    	customization_full
      	exit
         ;;
     apps | configure-apps | appmenu | menu | app-picker | app-picker-layout | apppicker )
         customization_appPicker
-	    customization_appPicker
- 	    customization_appPicker
+	customization_appPicker
+ 	customization_appPicker
         customization_appPicker
-	    customization_appPicker
+	customization_appPicker
  	echo -e "> App-picker layout should be configured now"
   	exit
 	;;
@@ -531,12 +542,8 @@ sleep 7
 fish -c "tide configure"
 
 
-script_print "Configuring GNOME App Picker Layout"
-customization_appPicker
-customization_appPicker
-customization_appPicker
-customization_appPicker
-customization_appPicker
+script_print "Configuring GNOME App Picker Layout and App Defaults"
+customization_full
 
 
 end_time=$(date +%s)
