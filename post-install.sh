@@ -202,7 +202,9 @@ sudo ln -s /usr/bin/zypper /usr/bin/zy
 
 
 script_print "Removing PackageKit aka 'kill my system instead of update'"
-sudo zy rm -u PackageKit
+sudo zy rm -u PackageKit gnome-packagekit gnome-software-plugin-packagekit \
+	PackageKit-backend-zypp PackageKit-branding-upstream PackageKit-gstreamer-plugin \
+ 	PackageKit-gtk3-module typelib-1_0-PackageKitGlib-1_0
 
 
 script_print "Disabling recommended packages and openSUSE branding in 'zypp' conf"
