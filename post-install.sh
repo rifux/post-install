@@ -113,7 +113,7 @@ name='suse-yast.directory'
 translate=true
 
 [folders/DevToolbox]
-apps=['io.github.fizzyizzy05.binary.desktop', 'org.gaphor.Gaphor.desktop', 'net.werwolv.ImHex.desktop', 'io.github.nokse22.asciidraw.desktop', 'org.gnome.Meld.desktop', 'fyi.zoey.Boop-GTK.desktop', 'io.github.nokse22.minitext.desktop', 'com.mardojai.ForgeSparks.desktop', 'com.jetpackduba.Gitnuro.desktop']
+apps=['io.github.fizzyizzy05.binary.desktop', 'org.godotengine.Godot.desktop', 'org.gaphor.Gaphor.desktop', 'net.werwolv.ImHex.desktop', 'io.github.nokse22.asciidraw.desktop', 'org.gnome.Meld.desktop', 'fyi.zoey.Boop-GTK.desktop', 'io.github.nokse22.minitext.desktop', 'com.mardojai.ForgeSparks.desktop', 'com.jetpackduba.Gitnuro.desktop']
 name='Dev. Toolbox'
 translate=false
 
@@ -123,7 +123,7 @@ name='Sys. Observing'
 translate=false
 
 [folders/Games]
-apps=['page.kramo.Cartridges.desktop', 'org.ryujinx.Ryujinx.desktop', 'org.godotengine.Godot.desktop']
+apps=['page.kramo.Cartridges.desktop', 'org.ryujinx.Ryujinx.desktop']
 name='Games'
 
 EOF
