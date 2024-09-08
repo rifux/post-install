@@ -21,7 +21,7 @@ customization_appPicker()
 folder-children=['Utilities', 'YaST', 'Pardus', 'eConfig', 'SysConfig', 'Games', 'Chatting', 'DevToolbox', 'LOffice', 'BoardGames', 'WebBrowsers', 'DiskUtilities', 'SysObserving', 'GNOMEApps', 'Productivity', 'Unused', 'CLIApps', 'MediaEditing', 'TextWorks', 'DLs', 'utils']
 
 [folders/MediaEditing]
-apps=['io.github.jliljebl.Flowblade.desktop', 'gimp.desktop', 'org.upscayl.Upscayl.desktop', 'net.fasterland.converseen.desktop', 'pinta.desktop', 'org.bunkus.mkvtoolnix-gui.desktop']
+apps=['io.github.jliljebl.Flowblade.desktop', 'gimp.desktop', 'org.upscayl.Upscayl.desktop', 'net.fasterland.converseen.desktop', 'garden.jamie.Morphosis.desktop', 'pinta.desktop', 'org.bunkus.mkvtoolnix-gui.desktop']
 name='Media Editing'
 translate=false
 
@@ -340,6 +340,7 @@ flatinstall com.github.neithern.g4music
 # flatinstall io.bassi.Amberol
 flatinstall com.github.unrud.VideoDownloader
 flatinstall net.fasterland.converseen
+flatinstall garden.jamie.Morphosis
 flatinstall info.febvre.Komikku
 flatinstall net.agalwood.Motrix
 flatinstall io.github.jliljebl.Flowblade
