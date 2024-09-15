@@ -46,7 +46,7 @@ name='Productivity'
 translate=false
 
 [folders/utils]
-apps=['nemo.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Shotwell.desktop', 'mpv.desktop', 'org.gnome.Music.desktop']
+apps=['nemo.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Shotwell.desktop', 'org.xfce.ristretto.desktop', 'mpv.desktop', 'org.gnome.Music.desktop'
 name='Utilities'
 translate=false
 
@@ -244,7 +244,7 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
 	\
 	docker \
 	\
-	pinta shotwell \
+	pinta shotwell ristretto \
 	\
 	jetbrains-mono-fonts fetchmsttfonts \
 	\
