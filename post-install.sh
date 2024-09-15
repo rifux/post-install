@@ -218,6 +218,9 @@ sudo zy in \
 	gtk2-branding-upstream gtk3-branding-upstream gtk4-branding-upstream
 
 
+script_print "Adding home:rifux.dev repository"
+sudo zy ar -f https://download.opensuse.org/repositories/home:/rifux.dev/openSUSE_Tumbleweed/home:rifux.dev.repo
+
 
 script_print "Installing necessary software: work stuff, code editors, terminal, file manager, dev tools, etc."
 sudo zy in --no-confirm --auto-agree-with-licenses	\
