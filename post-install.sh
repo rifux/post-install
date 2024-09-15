@@ -31,7 +31,7 @@ name='Board Games'
 translate=false
 
 [folders/DiskUtilities]
-apps=['org.gnome.DiskUtility.desktop', 'org.gnome.baobab.desktop', 'org.bleachbit.BleachBit.desktop', 'org.bleachbit.BleachBit-root.desktop']
+apps=['com.github.qarmin.czkawka.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.baobab.desktop', 'org.bleachbit.BleachBit.desktop', 'org.bleachbit.BleachBit-root.desktop']
 name='Disk Utilities'
 translate=false
 
@@ -255,7 +255,7 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
 	\
 	MozillaThunderbird \
 	\
-	bleachbit \
+	bleachbit czkawka \
 	\
 	gnome-boxes virtualbox \
  	\
