@@ -208,7 +208,7 @@ sudo zy rm -u PackageKit gnome-packagekit gnome-software-plugin-packagekit \
 
 
 script_print "Disabling recommended packages and openSUSE branding in 'zypp' conf"
-sudo sed --quiet 's/# solver.onlyRequires = false/solver.onlyRequires = true/' /etc/zypp/zypp.conf
+sudo sed -i 's/# solver.onlyRequires = false/solver.onlyRequires = true/g' /etc/zypp/zypp.conf
 
 
 script_print "Installing Vanilla Theming for installed software."
