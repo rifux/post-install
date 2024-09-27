@@ -326,9 +326,28 @@ script_print()
 	sleep $sleep_time
 }
 
+flatcheck()
+{
+	flatpak list --installed "\$1" &> /dev/null
+}
+
 flatinstall()
 {
+	# Main loop to install and check the package
+	while true; do
+	# Attempt to install the package
 	sudo flatpak install --system --assumeyes \$1
+	
+	# Check if the package is installed
+	if flatcheck "\$1"; then
+		echo "\$1 successfully installed."
+		break
+	else
+		# Wait for the specified delay before retrying
+		echo "Installation failed. Retrying in \$((sleep_time * 3)) seconds..."
+		sleep \$((sleep_time * 3))
+	fi
+	done
 }
 
 script_print "Installing LocalSend"
