@@ -264,6 +264,10 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
     	godot
 
 
+script_print "Selecting python3 as python default"
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 1
+
+
 script_print "Downloading usable Nerd Fonts"
 script_gitSparceClone https://github.com/ryanoasis/nerd-fonts \
 	"patched-fonts/NerdFontsSymbolsOnly" \
