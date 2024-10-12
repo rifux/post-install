@@ -229,7 +229,7 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
 	\
 	fish eza bat fd nnn btop progress bmon ncdu NetworkManager-tui fzf tealdeer zoxide \
 	\
-	terminology terminology-theme-upstream enlightenment enlightenment-branding-upstream \
+	terminology terminology-theme-upstream terminology-theme-dark enlightenment enlightenment-branding-upstream \
 	\
 	mpv \
 	\
