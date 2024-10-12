@@ -377,7 +377,7 @@ flatinstall org.upscayl.Upscayl
 
 
 script_print "Installing Chatting software"
-flatinstall io.github.NhekoReborn.Nheko
+flatinstall im.nheko.Nheko
 flatinstall im.fluffychat.Fluffychat
 flatinstall org.ferdium.Ferdium
 flatinstall chat.revolt.RevoltDesktop
