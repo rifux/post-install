@@ -325,15 +325,13 @@ script_print "Installing Flatpak apps"
 cat >./install_flatpak_apps.sh <<EOL
 #!/usr/bin/sh
 rm ./install_flatpak_apps.sh
+
+sleep_time=2
+
 script_print()
 {
 	echo -e "\\n\\n\\n[ \$1.. ]"
 	sleep $sleep_time
-}
-
-flatcheck()
-{
-	flatpak list --installed "\$1" &> /dev/null
 }
 
 flatinstall()
@@ -344,7 +342,7 @@ flatinstall()
 	sudo flatpak install --system --assumeyes \$1
 	
 	# Check if the package is installed
-	if flatcheck "\$1"; then
+	if ! [ -z "\$(flatpak list --app | grep "\$1")" ]; then
 		echo "\$1 successfully installed."
 		break
 	else
