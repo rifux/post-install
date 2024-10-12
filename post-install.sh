@@ -66,7 +66,7 @@ name='GNOME Apps'
 translate=false
 
 [folders/TextWorks]
-apps=['com.github.tenderowl.frog.desktop', 'io.crow_translate.CrowTranslate.desktop', 'org.gnome.Characters.desktop']
+apps=['com.github.tenderowl.frog.desktop', 'org.kde.CrowTranslate', 'org.gnome.Characters.desktop']
 name='OCR, Translate, Text'
 translate=false
 
@@ -405,7 +405,7 @@ flatinstall com.beavernotes.beavernotes
 # flatinstall com.toolstack.Folio
 # flatinstall io.github.mrvladus.List
 # flatinstall io.github.diegoivanme.flowtime
-flatinstall io.crow_translate.CrowTranslate
+flatinstall org.kde.CrowTranslate
 flatinstall io.github.nokse22.minitext
 flatinstall io.github.wazzaps.Fingerpaint
 flatinstall io.github.amit9838.mousam
