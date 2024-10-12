@@ -220,6 +220,7 @@ sudo zy in \
 
 script_print "Adding home:rifux.dev repository"
 sudo zy --gpg-auto-import-keys ar -f https://download.opensuse.org/repositories/home:/rifux.dev/openSUSE_Tumbleweed/home:rifux.dev.repo
+sudo zy ref
 
 
 script_print "Installing necessary software: work stuff, code editors, terminal, file manager, dev tools, etc."
