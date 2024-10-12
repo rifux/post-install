@@ -66,7 +66,7 @@ name='GNOME Apps'
 translate=false
 
 [folders/TextWorks]
-apps=['com.github.tenderowl.frog.desktop', 'org.kde.CrowTranslate', 'org.gnome.Characters.desktop']
+apps=['com.github.tenderowl.frog.desktop', 'org.kde.CrowTranslate.desktop', 'org.gnome.Characters.desktop']
 name='OCR, Translate, Text'
 translate=false
 
