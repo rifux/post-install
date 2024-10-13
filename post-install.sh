@@ -86,7 +86,7 @@ name='Downloaders'
 translate=false
 
 [folders/SysConfig]
-apps=['org.gnome.Settings.desktop', 'org.gnome.Extensions.desktop', 'ca.desrt.dconf-editor.desktop', 'org.gnome.tweaks.desktop', 'com.github.wwmm.easyeffects.desktop', 'org.gnome.seahorse.Application.desktop', 'com.github.tchx84.Flatseal.desktop', 'system-config-printer.desktop', 'enlightenment_fprint.desktop', 'vinagre.desktop', 'gpk-prefs.desktop', 'org.gnome.PackageUpdater.desktop']
+apps=['org.gnome.Settings.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Extensions.desktop', 'ca.desrt.dconf-editor.desktop', 'org.gnome.tweaks.desktop', 'com.github.wwmm.easyeffects.desktop', 'org.gnome.seahorse.Application.desktop', 'com.github.tchx84.Flatseal.desktop', 'system-config-printer.desktop', 'enlightenment_fprint.desktop', 'vinagre.desktop', 'gpk-prefs.desktop', 'org.gnome.PackageUpdater.desktop']
 name='Sys. Configuration'
 translate=false
 
@@ -242,7 +242,7 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
 	\
 	golang gopls git \
 	\
-	gnome-power-manager power-profiles-daemon \
+	extension-manager gnome-power-manager power-profiles-daemon \
 	\
 	opi \
 	\
