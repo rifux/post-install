@@ -71,7 +71,7 @@ name='OCR, Translate, Text'
 translate=false
 
 [folders/WebBrowsers]
-apps=['librewolf.desktop', 'org.garudalinux.firedragon.desktop', 'io.github.ungoogled_software.ungoogled_chromium.desktop', 'org.gnome.Epiphany.desktop', 'torbrowser.desktop', 'org.kde.angelfish.desktop', 'torbrowser-settings.desktop']
+apps=['librewolf.desktop', 'org.garudalinux.firedragon.desktop', 'io.github.ungoogled_software.ungoogled_chromium.desktop', 'org.gnome.Epiphany.desktop', 'torbrowser.desktop', 'org.kde.angelfish.desktop', 'torbrowser-settings.desktop', 'org.kde.falkon.desktop']
 name='Web Browsers'
 translate=false
 
@@ -260,7 +260,7 @@ sudo zy in --no-confirm --auto-agree-with-licenses	\
 	\
 	gnome-boxes virtualbox \
  	\
-  	torbrowser-launcher angelfish \
+  	torbrowser-launcher falkon angelfish \
    	\
     	godot
 
