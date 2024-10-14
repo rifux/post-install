@@ -71,7 +71,7 @@ name='OCR, Translate, Text'
 translate=false
 
 [folders/WebBrowsers]
-apps=['librewolf.desktop', 'io.github.ungoogled_software.ungoogled_chromium.desktop', 'org.gnome.Epiphany.desktop', 'torbrowser.desktop', 'org.kde.angelfish.desktop', 'torbrowser-settings.desktop']
+apps=['librewolf.desktop', 'org.garudalinux.firedragon.desktop', 'io.github.ungoogled_software.ungoogled_chromium.desktop', 'org.gnome.Epiphany.desktop', 'torbrowser.desktop', 'org.kde.angelfish.desktop', 'torbrowser-settings.desktop']
 name='Web Browsers'
 translate=false
 
@@ -396,6 +396,7 @@ flatinstall io.github.ungoogled_software.ungoogled_chromium
 
 
 script_print "Installing Productivity software: general"
+flatinstall org.garudalinux.firedragon
 flatinstall org.onlyoffice.desktopeditors
 flatinstall io.gitlab.idevecore.Pomodoro
 flatinstall io.github.alainm23.planify
